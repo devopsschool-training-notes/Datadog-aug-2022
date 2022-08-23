@@ -1,0 +1,50 @@
+9:30 AM IST - 5:30 PM IST
+---------------------
+Lunch - 1 PM - 2 PM 
+Break - 11 for 15 mins
+		3:30 for 15 mins
+=========================================
+Host Machine for all & Demo
+			----------- AWS CLOUD
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+INFRA
+		Linux			PLATFORM
+		Windows		PLATFORM
+		Apache		WEB
+		Docker		PLATFORM
+		Tomcat		APP
+		Mysql			DB 
+		AWS			Cloud
+
+APM
+		JAVA
+
+LOG
+	
+SYN
+
+RUM
+
+=========================================
+DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=eb7c96efb4a349556af1d02e9b8a29b5 DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+
+Centos - https://www.devopsschool.com/blog/how-to-install-datadog-agent-in-centos/
+Ubuntu - https://www.devopsschool.com/blog/how-to-install-datadog-agent-in-ubuntu/
+Windows - https://www.devopsschool.com/blog/datadog-agent-setup-in-windows-step-by-step-guide/
+
+How to enable process monitoring?
+=================================
+https://www.devopsschool.com/blog/how-to-enable-live-process-monitoring-in-datadog-agent/
+
+
+How to enable docker monitoring?
+https://www.devopsschool.com/blog/how-to-enable-docker-container-monitoring-in-datadog-agent/
+1. Install Docker
+2. Follow datadog config
+3. Create few containers
+
+
+
+
+
