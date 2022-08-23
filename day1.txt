@@ -59,5 +59,14 @@ LoadModule status_module modules/mod_status.so
 </Location>
 ExtendedStatus On
 
+Assignment
+----------------------
+What is Observability? How it would benefit SRE team?
+Write down top 10 commands of datadog and summary of use cases?
+
+
+
+
+
 
 
