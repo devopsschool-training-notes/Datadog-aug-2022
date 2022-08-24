@@ -40,6 +40,21 @@ instances:
     port: 9012
   - host: localhost
     port: 9012
+=================================================
+https://www.devopsschool.com/blog/how-to-install-oracle-database-19c-on-centos-7/
+
+https://www.devopsschool.com/blog/how-to-setup-datadog-apm-for-java-application-running-with-tomcat/
+
+
+CATALINA_OPTS="$CATALINA_OPTS -javaagent:/opt/dd-java-agent.jar -Ddd.profiling.enabled=true -Ddd.logs.injection=true -Ddd.trace.sample.rate=1 -Ddd.service=deliote-chat -Ddd.env=prod -Ddd.version=1.0"
+
+
+http://192.168.1.7:8080/examples/servlets/servlet/HelloWorldExample
+http://192.168.1.7:8080/examples/servlets/servlet/RequestInfoExample
+http://192.168.1.7:8080/examples/async/async0
+
+
+
 
 
 
