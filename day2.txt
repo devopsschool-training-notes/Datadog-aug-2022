@@ -1,0 +1,46 @@
+Sc 1- if DD agent is installed But its not reporting then wt to do?
+	- Check a datadog agent is running or not 
+	- Check a Lic key - Update it - restart it agent
+
+Sc2 - DD agent
+====================================================
+
+INFRA -> APM -> LOG -> SYN -> RUM
+---------------------------------
+				Ober
+====================================================================
+WEB 		-> APP 	-> DB
+Apache		-> Tomcat -> pS
+
+Tomcat Integration
+MySql
+PS
+
+AWS 
+Azure Firewall - SVC
+
+Tomcat integration with Datadog?
+------------------------------------
+https://www.devopsschool.com/blog/how-to-enable-apache-tomcat-monitoring-in-datadog-agent/
+---------------------------------
+Datadog - SRE - PROD -> LINUX
+
+We - Windows
+
+
+CATALINA_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9012 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+
+
+instances:
+
+    ## @param host - string - required
+    ## Tomcat JMX hostname to connect to.
+    #
+  - host: localhost
+    port: 9012
+  - host: localhost
+    port: 9012
+
+
+
+
