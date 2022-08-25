@@ -1,0 +1,106 @@
+Metrices + Trace + Log
+======================
+infra   + APM SYN* + Log*
+------------------------
+	Obserbability
+-------------------------
+			Alerts*
+- 
+-------------------------
+		Dashboard*
+Pipeline
+------------------------------
+Sec Monitoring - High level
+		- 
+Network Monitoring - High level
+		- snmp
+		- 
+=================================
+telnet intake.logs.datadoghq.com 10514
+14b235bc0d998848a30529f773afdf82 {"message":"JSON formatted log sent through TCP", "ddtags":"env:dev", "ddsource":"terminal", "hostname":"gs-hostame", "service":"user"}
+
+
+curl -X POST "https://http-intake.logs.datadoghq.com/api/v2/logs" \
+-H "Content-Type: application/json" \
+-H "DD-API-KEY: 14b235bc0d998848a30529f773afdf82" \
+-d @- << EOF
+[
+  {
+    "ddsource": "nginx",
+    "ddtags": "env:staging,version:5.1",
+    "hostname": "i-012345678",
+    "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World",
+    "service": "payment"
+  }
+]
+EOF
+
+
+==============================================
+- Install the Datadog Agent
+
+- Verify Datadog Agent Status and Look for "Logs Agent" which is not running.
+$ sudo datadog-agent status
+
+- Enable log collection
+To enable log collection with the Agent, edit the datadog.yaml configuration file located at /etc/datadog-agent/datadog.yaml and set logs_enabled:true
+
+- Monitor a custom file
+$ touch log_file_to_monitor.log
+$ echo "First line of log" >> log_file_to_monitor.log
+$ sudo mkdir /etc/datadog-agent/conf.d/custom_log_collection.d/
+$ sudo touch /etc/datadog-agent/conf.d/custom_log_collection.d/conf.yaml
+logs:
+    - type: file
+      path: /home/ubuntu/log_file_to_monitor.log
+      source: custom
+      service: user
+$ sudo service datadog-agent restart
+
+
+logs:
+    - type: file
+      path: /var/log/*.log
+      source: custom
+      service: user
+    - type: file
+      path: /var/log/*.log
+      source: custom
+      service: user
+    - type: file
+      path: /var/log/*.log
+      source: custom
+      service: user
+    - type: file
+      path: /var/log/*.log
+      source: custom
+      service: user
+
+-  Validation. Verify Dsudo datadog-agent status
+atadog Agent Status and Look for "Logs Agent" which is running.
+$
+- Add new logs to the file
+$ echo "New line of log in the log file" >> log_file_to_monitor.log
+
+
+    - type: file
+      path: /var/log/httpd/access_log
+      source: apache_access
+      service: apache
+      env: prod
+
+    - type: file
+      path: /var/log/httpd/error_log
+      source: apache_error_log
+      service: apache
+      env: prod
+
+
+https://www.devopsschool.com/blog/datadog-log-filter-logs-scrub-data-tail-with-wildcards/
+https://www.devopsschool.com/blog/datadog-log-setup-apache-log-analsys/
+
+logs 
+	tcp:port <----- Agent ----> DD
+	udp:port <----- Agent ----> DD
+
+
